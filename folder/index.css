@@ -39,6 +39,7 @@ body {
 .header-nav {
   display: flex;
   gap: 15px;
+  text-align: center;
 }
 
 .header-nav a {
