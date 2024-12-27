@@ -1,28 +1,32 @@
 "use client";
-
 import { useState } from "react";
 import Link from "next/link";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 
-function NavigationBar() {
-  const [expanded, setExpanded] = useState(false); // Manage the navbar's open state
+const NavigationBar = () => {
+  const [expanded, setExpanded] = useState(false);
 
-  const handleToggle = () => {
-    setExpanded(!expanded); // Toggle between open/close
-  };
+  const handleToggle = () => setExpanded(!expanded);
+  const handleLinkClick = () => setExpanded(false);
 
-  const handleLinkClick = () => {
-    setExpanded(false); // Close the navbar on link click
-  };
+  const navLinks = [
+    { href: "/en/", text: "Home" },
+    { href: "/en/relation", text: "International Partnership" },
+    { href: "/en/courses", text: "Courses" },
+    { href: "/en/residence", text: "Entry Japan" },
+    { href: "/en/accommodation", text: "Accommodation" },
+    { href: "/en/message", text: "Messages" },
+    { href: "/en/contact", text: "Contact" }
+  ];
 
   return (
     <Navbar
       expand="lg"
       className="bg-body-tertiary"
       sticky="top"
-      expanded={expanded} // Bind expanded state
+      expanded={expanded}
     >
       <Container>
         <Navbar.Brand as={Link} href="/en/">
@@ -33,45 +37,34 @@ function NavigationBar() {
             className="d-inline-block align-top"
           />
         </Navbar.Brand>
-        <Navbar.Toggle
+
+        <Navbar.Toggle 
           aria-controls="basic-navbar-nav"
-          onClick={handleToggle} // Toggle navbar state
+          onClick={handleToggle}
         />
+
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto">
-            <Nav.Link as={Link} href="/en/" onClick={handleLinkClick}>
-              Home
-            </Nav.Link>
-            <Nav.Link as={Link} href="/en/relation" onClick={handleLinkClick}>
-              International Partnership
-            </Nav.Link>
-            <Nav.Link as={Link} href="/en/courses" onClick={handleLinkClick}>
-              Courses
-            </Nav.Link>
-            <Nav.Link as={Link} href="/en/residence" onClick={handleLinkClick}>
-              Residence Permit
-            </Nav.Link>
-            <Nav.Link as={Link} href="/en/accommodation" onClick={handleLinkClick}>
-              Accommodation
-            </Nav.Link>
-            <Nav.Link as={Link} href="/en/message" onClick={handleLinkClick}>
-              Messages
-            </Nav.Link>
-            <Nav.Link as={Link} href="/en/contact" onClick={handleLinkClick}>
-              Contact
-            </Nav.Link>
+            {navLinks.map((link, index) => (
+              <Nav.Link
+                key={index}
+                as={Link}
+                href={link.href}
+                onClick={handleLinkClick}
+              >
+                {link.text}
+              </Nav.Link>
+            ))}
+
             <Nav.Link
               as={Link}
               href="/ja"
-              className="d-inline-block text-center bg-dark text-white rounded"
+              onClick={handleLinkClick}
+              className="ms-2 bg-dark text-white rounded d-flex align-items-center justify-content-center"
               style={{
                 width: "80px",
                 height: "40px",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
               }}
-              onClick={handleLinkClick}
             >
               日本語
             </Nav.Link>
@@ -80,6 +73,6 @@ function NavigationBar() {
       </Container>
     </Navbar>
   );
-}
+};
 
 export default NavigationBar;
