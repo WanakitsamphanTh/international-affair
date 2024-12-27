@@ -1,4 +1,4 @@
-export default function About(){
+export default function Courses(){
     return (
         <>
         </>

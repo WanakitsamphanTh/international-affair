@@ -1,7 +1,7 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import 'bootstrap/dist/css/bootstrap.min.css'
 import BootstrapClient from '@/components/BootstrapClient.js';
-import NavigationBar from "@/components/navbar/en";
+import NavigationBar from "@/components/navbar/ja";
 import Footer from "@/components/footer";
 
 const geistSans = Geist({
