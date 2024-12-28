@@ -16,7 +16,7 @@ const NavigationBar = () => {
     { href: "/en/relation", text: "International Partnership" },
     { href: "/en/courses", text: "Courses" },
     { href: "/en/residence", text: "Entry Japan" },
-    { href: "/en/accommodation", text: "Accommodation" },
+    { href: "/en/accommodation", text: "Accommodations" },
     { href: "/en/message", text: "Messages" },
     { href: "/en/contact", text: "Contact" }
   ];

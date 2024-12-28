@@ -1,6 +1,5 @@
 import React from "react";
 import Image from "next/image";
-import { Globe, Users, Calendar, Book } from "lucide-react";
 
 function Hero() {
   return (
@@ -22,8 +21,7 @@ function Hero() {
           </h1>
           <p className="lead fw-bold mb-4">Welcome to Sendai KOSEN</p>
           <p className="lead mb-4" style={{textAlign: "justify"}}>
-            Welcome to Sendai KOSEN.
-            <br/>We are determined to make our exchange programs inspiring and meaningful for all the international students we welcome here.
+            We are determined to make our exchange programs inspiring and meaningful for all the international students we welcome here.
             <br/>We greatly appreciate your interest in our college.
           </p>
         </div>
@@ -79,7 +77,7 @@ function LatestNews() {
   ];
 
   return (
-    <div className="bg-light py-5">
+    <div className="py-5">
       <div className="container">
         <h2 className="text-center mb-5">Latest News</h2>
         <div className="row g-4">
