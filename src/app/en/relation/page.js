@@ -1,4 +1,5 @@
 import Image from "next/image";
+import relationship from "@/images/relationship.png";
 
 function Hero() {
   return (
@@ -93,7 +94,7 @@ function WorldwideNetwork() {
         <h2 className="text-center mb-5">Our Global Network</h2>
         <div className="position-relative">
           <Image
-            src="/relationship.png"
+            src={relationship}
             alt="Global partnership network"
             width={1521}
             height={947}

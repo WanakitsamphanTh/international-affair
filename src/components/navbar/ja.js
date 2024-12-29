@@ -9,13 +9,14 @@ const NavigationBar = () => {
   const [expanded, setExpanded] = useState(false);
 
   const handleToggle = () => setExpanded(!expanded);
+  const handleLinkClick = () => setExpanded(false);
 
   const navLinks = [
     { href: "/ja/", text: "ホーム" },
-    { href: "/ja/courses", text: "海外への留学" },
-    { href: "/ja/relation", text: "奨学金情報" },
-    { href: "/ja/residence", text: "留学までのスケジュール" },
-    { href: "/ja/accommodation", text: "海外危機管理" },
+    { href: "/ja/course", text: "海外への留学" },
+    { href: "/ja/scholarship", text: "奨学金情報" },
+    { href: "/ja/schedule", text: "留学までのスケジュール" },
+    { href: "/ja/safety", text: "海外危機管理" },
     { href: "/ja/message", text: "先輩からのメッセージ" }
   ];
 
@@ -48,7 +49,7 @@ const NavigationBar = () => {
                 key={index}
                 as={Link}
                 href={link.href}
-                onClick={handleToggle}
+                onClick={handleLinkClick}
               >
                 {link.text}
               </Nav.Link>
@@ -57,7 +58,7 @@ const NavigationBar = () => {
             <Nav.Link
               as={Link}
               href="/en"
-              onClick={handleToggle}
+              onClick={handleLinkClick}
               className="ms-2 bg-dark text-white rounded d-flex align-items-center justify-content-center"
               style={{ 
                 width: "80px", 

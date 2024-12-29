@@ -14,7 +14,7 @@ const NavigationBar = () => {
   const navLinks = [
     { href: "/en/", text: "Home" },
     { href: "/en/relation", text: "International Partnership" },
-    { href: "/en/courses", text: "Courses" },
+    { href: "/en/course", text: "Courses" },
     { href: "/en/residence", text: "Entry Japan" },
     { href: "/en/accommodation", text: "Accommodations" },
     { href: "/en/message", text: "Messages" },

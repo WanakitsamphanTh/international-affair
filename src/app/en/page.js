@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import homeimg from "@/images/home.png";
 
 function Hero() {
   return (
@@ -7,7 +8,7 @@ function Hero() {
       <div className="row flex-lg-row-reverse align-items-center g-5 py-5">
         <div className="col-10 col-sm-8 col-lg-6">
           <Image
-            src="/home.png"
+            src={homeimg}
             alt="Sendai KOSEN Hero Image"
             className="d-block mx-lg-auto img-fluid rounded shadow-lg"
             width={1400}

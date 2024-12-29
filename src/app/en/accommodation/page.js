@@ -1,9 +1,9 @@
 "use client";
-import Button from 'react-bootstrap/Button';
 import Image from "next/image";
 import { Link as LucideLink, FileText } from 'lucide-react';
 import Link from 'next/link';
 import Card from 'react-bootstrap/Card';
+import dorm from "@/images/dorm.png";
 
 const Hero = () => {
   return (
@@ -95,12 +95,13 @@ const SchoolDormitories = () => {
 
             <div className="text-center">
               <Image
-                src="/dorm.png"
+                src={dorm}
                 alt="Dormitory"
                 width={1128}
                 height={1152}
-                className="img-fluid rounded shadow-sm"
+                className="img-fluid rounded"
                 priority
+                quality={100}
               />
             </div>
           </div>
