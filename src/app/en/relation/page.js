@@ -130,7 +130,7 @@ function UniversityTable() {
         {
           name: "King Mongkut's Institute of Technology Ladkrabang",
           url: "https://www.kmitl.ac.th/",
-          agreements: "March 10, 2006"
+          agreements: "October 1, 2009"
         },
         {
           name: "KOSEN-KMITL",

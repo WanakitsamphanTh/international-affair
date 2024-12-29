@@ -60,7 +60,7 @@ const NavigationBar = () => {
               as={Link}
               href="/ja"
               onClick={handleLinkClick}
-              className="ms-2 bg-dark text-white rounded d-flex align-items-center justify-content-center"
+              className="ms-2 bg-dark text-white rounded d-flex align-items-center justify-content-center text-align-center"
               style={{
                 width: "80px",
                 height: "40px",

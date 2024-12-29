@@ -3,6 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import BootstrapClient from '@/components/BootstrapClient.js';
 import NavigationBar from "@/components/navbar/ja";
 import Footer from "@/components/footer";
+import 'bootstrap-icons/font/bootstrap-icons.css'
 
 const geistSans = Geist({
   variable: "--font-geist-sans",

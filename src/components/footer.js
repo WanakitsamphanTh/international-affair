@@ -2,6 +2,7 @@ import Link from 'next/link';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default function Footer() {
+  const currentYear = new Date().getFullYear();
     return (
       <div className="container">
         <svg xmlns="http://www.w3.org/2000/svg" className="d-none">
@@ -19,7 +20,7 @@ export default function Footer() {
         <footer className="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
           <div className="col-md-4 d-flex align-items-center">
             <span className="mb-3 mb-md-1 text-body-secondary">
-              &copy; 2024 National Institute of Technology, Sendai College
+              &copy; {currentYear} National Institute of Technology, Sendai College
             </span>
           </div>
 
