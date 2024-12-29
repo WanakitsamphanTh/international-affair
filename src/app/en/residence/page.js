@@ -1,6 +1,9 @@
 import React from 'react';
 import { FileCheck, FilePenLine, Building2, Plane, Hospital } from 'lucide-react';
 import Link from 'next/link';
+import { siteMeta } from "@/lib/en/constants";
+import { openGraphMetadata, twitterMetadata } from "@/lib/en/baseMetadata";
+const {siteTitle, siteUrl, siteIcon} = siteMeta;
 
 function Hero() {
   return (
@@ -162,4 +165,28 @@ export default function Residence() {
       <Content />
     </>
   );
+}
+
+// metadata
+const pageTitle = "Residence Permit";
+const pageDesc = "Apply for a visa or residence permit to Japan";
+const ogpTitle = `${pageTitle} | ${siteTitle}`;
+const ogpUrl = new URL("/en/residence", siteUrl).toString();
+
+export const metadata = {
+  title: pageTitle,
+  description: pageDesc,
+
+  openGraph: {
+    ...openGraphMetadata,
+    title: ogpTitle,
+    url: ogpUrl,
+    description: pageDesc,
+  },
+
+  twitter: {
+    ...twitterMetadata,
+    title: ogpTitle,
+    description: pageDesc,
+  }
 }

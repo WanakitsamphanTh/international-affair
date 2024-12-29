@@ -1,6 +1,9 @@
 import Image from "next/image";
 import relationship from "@/images/relationship.png";
-import { University } from "lucide-react";
+import { siteMeta } from "@/lib/ja/constants";
+import { openGraphMetadata, twitterMetadata } from "@/lib/ja/baseMetadata";
+const {siteTitle, siteUrl, siteIcon} = siteMeta;
+
 function Hero() {
   return (
     <section className="py-5 bg-light">
@@ -304,4 +307,28 @@ export default function Courses(){
         <UniversityTable />
         </>
     );
+}
+
+// metadata
+const pageTitle = "海外への留学";
+const pageDesc = "仙台高専から協定締結校への留学プログラムについて";
+const ogpTitle = `${pageTitle} | ${siteTitle}`;
+const ogpUrl = new URL("/ja/course", siteUrl).toString();
+
+export const metadata = {
+  title: pageTitle,
+  description: pageDesc,
+
+  openGraph: {
+    ...openGraphMetadata,
+    title: ogpTitle,
+    url: ogpUrl,
+    description: pageDesc,
+  },
+
+  twitter: {
+    ...twitterMetadata,
+    title: ogpTitle,
+    description: pageDesc,
+  }
 }

@@ -1,5 +1,8 @@
 import React from 'react';
 import { Search, Languages, FileCheck, School, Plane, FileText, Users } from 'lucide-react';
+import { siteMeta } from "@/lib/ja/constants";
+import { openGraphMetadata, twitterMetadata } from "@/lib/ja/baseMetadata";
+const {siteTitle, siteUrl, siteIcon} = siteMeta;
 
 function Hero() {
     return (
@@ -117,4 +120,28 @@ export default function StudyAbroadSchedule() {
       <Timeline />
     </main>
   );
+}
+
+// metadata
+const pageTitle = "留学するまでのスケジュール";
+const pageDesc = "海外長期インターンシップを希望する学生が留学するのを決定するまでの流れ";
+const ogpTitle = `${pageTitle} | ${siteTitle}`;
+const ogpUrl = new URL("/ja/schedule", siteUrl).toString();
+
+export const metadata = {
+  title: pageTitle,
+  description: pageDesc,
+
+  openGraph: {
+    ...openGraphMetadata,
+    title: ogpTitle,
+    url: ogpUrl,
+    description: pageDesc,
+  },
+
+  twitter: {
+    ...twitterMetadata,
+    title: ogpTitle,
+    description: pageDesc,
+  }
 }

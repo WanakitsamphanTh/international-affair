@@ -1,5 +1,8 @@
 import Image from "next/image";
 import relationship from "@/images/relationship.png";
+import { siteMeta } from "@/lib/en/constants";
+import { openGraphMetadata, twitterMetadata } from "@/lib/en/baseMetadata";
+const {siteTitle, siteUrl, siteIcon} = siteMeta;
 
 function Hero() {
   return (
@@ -307,4 +310,28 @@ export default function Relation() {
       <UniversityTable />
     </main>
   );
+}
+
+// metadata
+const pageTitle = "Partnerships";
+const pageDesc = "Information on international partnerships and global education.";
+const ogpTitle = `${pageTitle} | ${siteTitle}`;
+const ogpUrl = new URL("/en/relation", siteUrl).toString();
+
+export const metadata = {
+  title: pageTitle,
+  description: pageDesc,
+
+  openGraph: {
+    ...openGraphMetadata,
+    title: ogpTitle,
+    url: ogpUrl,
+    description: pageDesc,
+  },
+
+  twitter: {
+    ...twitterMetadata,
+    title: ogpTitle,
+    description: pageDesc,
+  }
 }
