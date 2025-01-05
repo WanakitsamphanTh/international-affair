@@ -1,5 +1,5 @@
 import { siteMeta } from "@/lib/ja/constants";
-const { siteTitle, siteDesc, siteUrl, siteLang, siteLocale, siteType, siteIcon } = siteMeta;
+const { siteTitle, siteDesc, siteUrl, siteLang, siteLocale, siteType, siteIcon, siteIconApple } = siteMeta;
 
 export const baseMetadata = {
     metadataBase: new URL(siteUrl),
@@ -14,7 +14,7 @@ export const baseMetadata = {
     description: siteDesc,
     icons: {
         icon: siteIcon,
-        apple: siteIcon,
+        apple: siteIconApple,
     },
 }
 
