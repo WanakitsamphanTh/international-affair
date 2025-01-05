@@ -14,7 +14,7 @@ const NavigationBar = () => {
   const navLinks = [
     { href: "/ja/", text: "ホーム" },
     { href: "/ja/course", text: "海外への留学" },
-    { href: "/ja/scholarship", text: "奨学金情報" },
+    { href: "/ja/scholarship", text: "留学サポート" },
     { href: "/ja/schedule", text: "留学までのスケジュール" },
     { href: "/ja/safety", text: "海外危機管理" },
     { href: "/ja/message", text: "先輩からのメッセージ" }

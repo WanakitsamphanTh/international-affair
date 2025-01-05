@@ -10,7 +10,9 @@ function Hero() {
         <div className="container">
           <div className="row align-items-center">
             <div className="col-lg-8">
-              <h1 className="display-4 fw-bold mb-3">留学するまでのスケジュール</h1>
+              <h1 className="display-4 fw-bold mb-3">
+                留学するまでのスケジュール
+              </h1>
               <p className="lead mb-4">
                 このスケジュールは、海外長期インターンシップを希望する学生が留学するのを決定するまでの流れを示しています。他の留学プログラムはこのスケジュールとは異なる場合があります。
               </p>
