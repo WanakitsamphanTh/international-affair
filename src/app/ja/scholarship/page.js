@@ -1,6 +1,6 @@
 import { siteMeta } from "@/lib/ja/constants";
 import { openGraphMetadata, twitterMetadata } from "@/lib/ja/baseMetadata";
-import {CardExample, Information} from "@/app/ja/scholarship/content";
+import {CardExample, Information, Others} from "@/app/ja/scholarship/content";
 const {siteTitle, siteUrl, siteIcon} = siteMeta;
 
 function Hero(){
@@ -26,6 +26,7 @@ export default function Scholarship(){
           <Hero />
           <CardExample />
           <Information />
+          <Others />
         </main>
     );
 }

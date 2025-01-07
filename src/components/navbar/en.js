@@ -18,7 +18,6 @@ const NavigationBar = () => {
     { href: "/en/residence", text: "Entry Japan" },
     { href: "/en/accommodation", text: "Accommodations" },
     { href: "/en/message", text: "Messages" },
-    { href: "/en/contact", text: "Contact" }
   ];
 
   return (
