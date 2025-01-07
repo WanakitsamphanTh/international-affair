@@ -1,10 +1,124 @@
 import { siteMeta } from "@/lib/en/constants";
 import { openGraphMetadata, twitterMetadata } from "@/lib/en/baseMetadata";
+import Link from "next/link";
 const {siteTitle, siteUrl, siteIcon} = siteMeta;
+
+const Hero = () => {
+  return (
+    <section className="py-5 bg-light">
+      <div className="container">
+        <div className="row align-items-center">
+          <div className="col-lg-8">
+            <h1 className="display-4 fw-bold mb-3">Courses</h1>
+            <p className="lead mb-4">
+              Information on courses available for inbounded international students.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+const Classes = () => {
+  return (
+    <section>
+      <h2>Courses during exchange</h2>
+      <h3>Japanese Language & Culture Class</h3>
+      <h3>Research in Labs</h3>
+      <p>List of <Link href="https://www.sendai-nct.ac.jp/english/research/rs-introduction/">researches</Link> in Sendai KOSEN</p>
+    </section>
+  );
+}
+
+const ExchangeProgram = ({ title, country, additionalInfo, link }) => (
+  <div className="card mb-4 border-0 shadow-sm">
+    <div className="card-body">
+      <h3 className="h4 card-title text-primary">{title}</h3>
+      <div className="d-flex align-items-center mb-2">
+        <i className="bi bi-geo-alt-fill me-2 text-muted"></i>
+        <span className="text-muted">From: {country}</span>
+      </div>
+      {additionalInfo && <p className="card-text">{additionalInfo}</p>}
+      {link && (
+        <div className="mt-3">
+          <Link 
+            href={link.url}
+            className="btn btn-outline-primary btn-sm"
+            target={link.external ? "_blank" : "_self"}
+            rel={link.external ? "noopener noreferrer" : ""}
+          >
+            {link.text} {link.external && <i className="bi bi-box-arrow-up-right ms-1"></i>}
+          </Link>
+        </div>
+      )}
+    </div>
+  </div>
+);
+
+const Range = () => {
+  const programs = [
+    {
+      title: "Spring Program (April-July)",
+      country: "Finland and France"
+    },
+    {
+      title: "Short Program (May-June)",
+      country: "Thailand"
+    },
+    {
+      title: "Internship at Local Companies (September-October)",
+      country: "Mongolia",
+      additionalInfo: "Past exchange:",
+      link: {
+        text: "Read about successful Mongolian Kosen students internships",
+        url: "https://www.sendai-nct.ac.jp/20191114/",
+        external: true
+      }
+    },
+    {
+      title: "Autumn Program (September-February)",
+      country: "Finland and Kazakhstan"
+    }
+  ];
+
+  return (
+    <section>
+      <div className="container py-5">
+        <h2 className="text-center mb-5">Exchange Programs</h2>
+        
+        <div className="row">
+          <div className="col-lg-8 mx-auto">
+            {programs.map((program, index) => (
+              <ExchangeProgram key={index} {...program} />
+            ))}
+            
+            <div className="card mb-4 border-0 shadow-sm">
+              <div className="card-body">
+                <h3 className="h4 card-title text-primary">Other Programs</h3>
+                <Link 
+                  href="https://ssp.jst.go.jp/en/"
+                  className="btn btn-outline-primary btn-sm"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Sakura Science Exchange Program <i className="bi bi-box-arrow-up-right ms-1"></i>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
 
 export default function Courses(){
     return (
         <>
+        <Hero />
+        <Range />
+        <Classes />
         </>
     );
 }
