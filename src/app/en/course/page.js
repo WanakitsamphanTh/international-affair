@@ -20,16 +20,42 @@ const Hero = () => {
   );
 };
 
-const Classes = () => {
-  return (
-    <section>
-      <h2>Courses during exchange</h2>
-      <h3>Japanese Language & Culture Class</h3>
-      <h3>Research in Labs</h3>
-      <p>List of <Link href="https://www.sendai-nct.ac.jp/english/research/rs-introduction/">researches</Link> in Sendai KOSEN</p>
-    </section>
-  );
-}
+const CourseInfo = () => (
+  <section className="py-5 bg-light">
+    <div className="container">
+      <h2 className="mb-4">Courses during Exchange</h2>
+      <div className="row g-4">
+        <div className="col-md-6">
+          <div className="card h-100 border-0 shadow-sm">
+            <div className="card-body">
+              <h3 className="h5 mb-3">Japanese Language & Culture Class</h3>
+              <p className="text-muted mb-0">
+                Immerse yourself in Japanese language and cultural studies during your exchange period.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div className="col-md-6">
+          <div className="card h-100 border-0 shadow-sm">
+            <div className="card-body">
+              <h3 className="h5 mb-3">Research in Labs</h3>
+              <p className="text-muted mb-0">
+                Explore research opportunities at Sendai KOSEN.{" "}<br/>
+                <Link 
+                  href="https://www.sendai-nct.ac.jp/english/research/rs-introduction/"
+                  className="text-primary text-decoration-none"
+                >
+                  View available research programs
+                  <i className="bi bi-arrow-right ms-1"></i>
+                </Link>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+);
 
 const ExchangeProgram = ({ title, country, additionalInfo, link }) => (
   <div className="card mb-4 border-0 shadow-sm">
@@ -118,7 +144,7 @@ export default function Courses(){
         <>
         <Hero />
         <Range />
-        <Classes />
+        <CourseInfo />
         </>
     );
 }
