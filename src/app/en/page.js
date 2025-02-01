@@ -21,9 +21,9 @@ function Hero() {
             International Affairs Section
           </h1>
           <p className="lead fw-bold mb-4">Welcome to Sendai KOSEN</p>
-          <p className="lead mb-4" style={{textAlign: "justify"}}>
+          <p className="lead mb-4" style={{ textAlign: "justify" }}>
             We are determined to make our exchange programs inspiring and meaningful for all the international students we welcome here.
-            <br/>We greatly appreciate your interest in our college.
+            <br />We greatly appreciate your interest in our college.
           </p>
         </div>
       </div>
@@ -58,25 +58,34 @@ function Stats() {
   );
 }
 
-function LatestNews() {
+function getLatestNews(number) {
   const news = [
     {
-      date: "December 20, 2024",
-      title: "Spring Exchange Program Applications Now Open",
-      description: "Applications for our Spring 2025 exchange program are now being accepted. Deadline: January 31, 2025."
+      date: "December 13, 2024",
+      title: "A One-Month Training Program For Thai Teachers and Staff",
+      description: "A total of 19 participants, including 9 teachers and staff members from KOSEN-KMTIL, another 9 from KOSEN KMUTT and an interpreter visited Sendai KOSEN",
+      link: "https://www.facebook.com/International.NITSC/posts/pfbid02sxjFeC7wbPkmdboxRdXFSvDkTpJp3xmp4RhECEo5PDvpTRjnTa2k9x4tWS86h3JPl"
     },
     {
-      date: "December 15, 2024",
-      title: "International Cultural Festival Success",
-      description: "Over 200 students participated in our annual International Cultural Festival, showcasing global traditions."
+      date: "October 8, 2024",
+      title: "Welcome our exchange students",
+      description: "Two short-term exchange students came to National Institute of Technology, Sendai College for a 5-month program, both from Finland, Metropolia University of Applied Sciences and Oulu University of Applied Sciences.",
+      link: "https://www.facebook.com/International.NITSC/posts/pfbid02U4xmEYHhWftMEEynHscwvnH9vsVApfkjqe5Qv3m79W9u3SXyUHop9gVdrFrbvxd2l"
     },
     {
-      date: "December 10, 2024",
-      title: "New Partnership Announcement",
-      description: "Sendai KOSEN establishes new partnership with leading technical institution in Europe."
+      date: "October 1, 2024",
+      title: "Cross-cultural Exchange Program in Penang",
+      description: "One hundred and seventy students from Toyohashi University of technology and colleges of technology all over Japan participated in the one to two-week program. ",
+      link: "https://www.facebook.com/International.NITSC/posts/pfbid02r2niGTWx1kAUegz8YPdb9g7uiY9HEaVzg7HXYXGykimd8iGbSWBCVft5cfjHfqGZl"
     }
   ];
 
+  return news;
+}
+
+function LatestNews() {
+
+  const news = getLatestNews(3);
   return (
     <div className="py-5">
       <div className="container">
@@ -89,7 +98,7 @@ function LatestNews() {
                   <div className="text-muted mb-2">{item.date}</div>
                   <h5 className="card-title mb-3">{item.title}</h5>
                   <p className="card-text">{item.description}</p>
-                  <a href="#" className="text-decoration-none">Read more →</a>
+                  <a href={item.link} className="text-decoration-none">Read more on Facebook</a>
                 </div>
               </div>
             </div>
