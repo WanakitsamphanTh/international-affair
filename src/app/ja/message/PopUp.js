@@ -51,7 +51,7 @@ export default function PopUp({ title, author, date, country, content, profile, 
                 </div>
             </ModalHeader>
             <ModalBody>
-                <p className="fw-light" style={{ textAlign: "justify" }}>{content}</p>
+                {content.split('\n').map(line => (<p className="fw-light" style={{ textAlign: "justify", paddingLeft: "1em", paddingRight: "1em" }}>{line}</p>))}
             </ModalBody>
         </Modal>
     );
