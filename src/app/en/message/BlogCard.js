@@ -5,7 +5,7 @@ import PopUp from "./PopUp";
 import React, {useState} from "react";
 
 
-export default function BlogCard({id,title, date, author, country, profile, content}){
+export default function BlogCard({id, title, date, author, country, profile, content}){
     const [visibleState, setVisibility] = useState(false);
     const PopUpContent = () => (<PopUp title={title} date = {date} author={author} country={country} profile={profile} content={content} visibleState={visibleState} setVisibility={setVisibility}/>);
     //const PopUpContent = () => (<PopUp title={title} profile={profile} content={content}/>);
