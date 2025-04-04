@@ -15,17 +15,17 @@
     "start": "cross-env NODE_OPTIONS=--no-deprecation next start"
   },
   "dependencies": {
-    "@payloadcms/db-mongodb": "3.31.0",
-    "@payloadcms/next": "3.31.0",
-    "@payloadcms/payload-cloud": "3.31.0",
-    "@payloadcms/richtext-lexical": "3.31.0",
+    "@payloadcms/db-mongodb": "3.32.0",
+    "@payloadcms/next": "3.32.0",
+    "@payloadcms/payload-cloud": "3.32.0",
+    "@payloadcms/richtext-lexical": "3.32.0",
     "bootstrap": "^5.3.4",
     "cross-env": "^7.0.3",
     "esbuild": "^0.25.2",
     "graphql": "^16.10.0",
     "image-size": "^2.0.2",
     "next": "15.2.4",
-    "payload": "3.31.0",
+    "payload": "3.32.0",
     "react": "19.0.0",
     "react-bootstrap": "^2.10.9",
     "react-dom": "19.0.0",
@@ -48,6 +48,9 @@
   "pnpm": {
     "onlyBuiltDependencies": [
       "sharp"
+    ],
+    "ignoredBuiltDependencies": [
+      "esbuild"
     ]
   }
 }
