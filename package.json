@@ -24,7 +24,7 @@
     "esbuild": "^0.25.2",
     "graphql": "^16.10.0",
     "image-size": "^2.0.2",
-    "next": "15.2.3",
+    "next": "15.2.4",
     "payload": "3.31.0",
     "react": "19.0.0",
     "react-bootstrap": "^2.10.9",
