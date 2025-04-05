@@ -1,6 +1,10 @@
-# blank
+# Internation Affairs Section at Sendai KOSEN
 
-blank
+## How to Run
+```console
+pnpm install
+pnpm run dev
+```
 
 ## Attributes
 
