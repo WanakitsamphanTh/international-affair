@@ -19,7 +19,7 @@
     "@payloadcms/next": "3.32.0",
     "@payloadcms/payload-cloud": "3.32.0",
     "@payloadcms/richtext-lexical": "3.32.0",
-    "bootstrap": "^5.3.4",
+    "bootstrap": "^5.3.5",
     "cross-env": "^7.0.3",
     "esbuild": "^0.25.2",
     "graphql": "^16.10.0",
@@ -36,7 +36,7 @@
     "@types/node": "^22.14.0",
     "@types/react": "19.0.12",
     "@types/react-dom": "19.0.4",
-    "eslint": "^9.23.0",
+    "eslint": "^9.24.0",
     "eslint-config-next": "15.2.3",
     "prettier": "^3.5.3",
     "typescript": "5.7.3"

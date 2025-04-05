@@ -4,6 +4,25 @@ export const SchoolList: CollectionConfig = {
   slug: 'school-list',
   fields: [
     {
+      name: 'hero',
+      label: 'Hero Section',
+      type: 'group',
+      fields: [
+        {
+          name: 'title',
+          label: 'Title',
+          type: 'text',
+          required: true,
+        },
+        {
+          name: 'description',
+          label: 'Description',
+          type: 'textarea',
+          required: true,
+        },
+      ],
+    },
+    {
       name: 'Agreements',
       label: 'University Agreements',
       type: 'array',

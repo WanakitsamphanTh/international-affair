@@ -157,6 +157,10 @@ export interface Media {
  */
 export interface SchoolList {
   id: string;
+  hero: {
+    title: string;
+    description: string;
+  };
   Agreements?:
     | {
         country_jp: string;
@@ -275,6 +279,12 @@ export interface MediaSelect<T extends boolean = true> {
  * via the `definition` "school-list_select".
  */
 export interface SchoolListSelect<T extends boolean = true> {
+  hero?:
+    | T
+    | {
+        title?: T;
+        description?: T;
+      };
   Agreements?:
     | T
     | {

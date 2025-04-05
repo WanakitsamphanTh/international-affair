@@ -30,7 +30,7 @@ export default function NavigationBar(){
       expanded={expanded}
     >
       <Container>
-        <Navbar.Brand as={Link} locale="en" href="/en/">
+        <Navbar.Brand as={Link} href="/en/">
           <img
             src="https://www.sendai-nct.ac.jp/wp/wp-content/themes/lab-sendainct/assets/images/logo-en.svg"
             alt="Sendai KOSEN Logo"
