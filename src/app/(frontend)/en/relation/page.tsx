@@ -1,16 +1,7 @@
 import Hero from "@/components/hero";
 import Link from "next/link";
-import { fetchSchoolListHero, fetchSchoolListTable } from "@/app/lib/data";
-
-function formatDate(dateString: string): string {
-  const date = new Date(dateString);
-  if (isNaN(date.getTime())) return dateString;
-  return new Intl.DateTimeFormat('en-US', {
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric'
-  }).format(date);
-}
+import { fetchSchoolListHero, fetchSchoolListTable } from "@/app/lib/relation/data";
+import { formatDateEn } from "@/app/lib/relation/date";
 
 async function UniversityTable(){
   const partnerships = await fetchSchoolListTable();
@@ -50,10 +41,10 @@ async function UniversityTable(){
                   <td>
                     {Array.isArray(uni.agreement_dates) ? (
                       uni.agreement_dates.map((dateString, k) => (
-                        <div key={k}>{formatDate(dateString)}</div>
+                        <div key={k}>{formatDateEn(dateString)}</div>
                       ))
                     ) : (
-                      <div>{formatDate(uni.agreement_dates)}</div>
+                      <div>{formatDateEn(uni.agreement_dates)}</div>
                     )}
                   </td>
                 </tr>
