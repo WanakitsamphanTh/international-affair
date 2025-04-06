@@ -161,6 +161,14 @@ export interface SchoolList {
     title: string;
     description: string;
   };
+  highlight?:
+    | {
+        title: string;
+        description: string;
+        id?: string | null;
+      }[]
+    | null;
+  image?: (string | null) | Media;
   Agreements?:
     | {
         country_jp: string;
@@ -285,6 +293,14 @@ export interface SchoolListSelect<T extends boolean = true> {
         title?: T;
         description?: T;
       };
+  highlight?:
+    | T
+    | {
+        title?: T;
+        description?: T;
+        id?: T;
+      };
+  image?: T;
   Agreements?:
     | T
     | {
