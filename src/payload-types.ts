@@ -160,6 +160,7 @@ export interface SchoolList {
   hero: {
     title: string;
     description: string;
+    image?: (string | null) | Media;
   };
   highlight?:
     | {
@@ -292,6 +293,7 @@ export interface SchoolListSelect<T extends boolean = true> {
     | {
         title?: T;
         description?: T;
+        image?: T;
       };
   highlight?:
     | T

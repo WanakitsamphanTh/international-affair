@@ -1,27 +1,10 @@
 import type { CollectionConfig } from "payload";
+import { hero } from "@/fields/Hero";
 
 export const SchoolList: CollectionConfig = {
   slug: 'school-list',
   fields: [
-    {
-      name: 'hero',
-      label: 'Hero Section',
-      type: 'group',
-      fields: [
-        {
-          name: 'title',
-          label: 'Title',
-          type: 'text',
-          required: true,
-        },
-        {
-          name: 'description',
-          label: 'Description',
-          type: 'textarea',
-          required: true,
-        },
-      ],
-    },
+    hero,
     {
       name: 'highlight',
       label: 'Highlight Section',
