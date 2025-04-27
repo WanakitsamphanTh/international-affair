@@ -3,10 +3,16 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Footer from '@/components/Footer';
 import Navigationbar from '@/components/navbar/Navbar-en';
 import { Noto_Sans_JP } from 'next/font/google';
+import { baseMetadata, openGraphMetadata, twitterMetadata } from '@/app/lib/baseMetadata';
 
 export const metadata = {
-  description: 'A blank template using Payload in a Next.js app.',
-  title: 'Payload Blank Template',
+  ...baseMetadata,
+  openGraph: {
+    ...openGraphMetadata,
+  },
+  twitter: {
+    ...twitterMetadata,
+  },
 }
 
 const notoSansJP = Noto_Sans_JP({subsets: ['latin']});
