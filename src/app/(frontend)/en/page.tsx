@@ -1,5 +1,10 @@
-import React from "react";
-import Image from "next/image";
+import React from 'react'
+import { fetchData } from '@/app/lib/data'
+import { HeroProps, HomeHero } from '@/components/Hero'
+
+type Props = {
+  hero: HeroProps
+}
 
 function Stats() {
   return (
@@ -28,10 +33,17 @@ function Stats() {
   )
 }
 
-export default function HomePage() {
-    return (
-        <main>
-            <Stats />
-        </main>
-    )
+export default async function HomePage() {
+  const data = (await fetchData('homepage')) as Props
+
+  return (
+    <main>
+      <HomeHero
+        title={data?.hero?.title}
+        description={data?.hero?.description}
+        image={data?.hero?.image}
+      />
+      <Stats />
+    </main>
+  )
 }

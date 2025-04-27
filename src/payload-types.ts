@@ -70,6 +70,7 @@ export interface Config {
     users: User;
     media: Media;
     'school-list': SchoolList;
+    homepage: Homepage;
     'payload-locked-documents': PayloadLockedDocument;
     'payload-preferences': PayloadPreference;
     'payload-migrations': PayloadMigration;
@@ -79,6 +80,7 @@ export interface Config {
     users: UsersSelect<false> | UsersSelect<true>;
     media: MediaSelect<false> | MediaSelect<true>;
     'school-list': SchoolListSelect<false> | SchoolListSelect<true>;
+    homepage: HomepageSelect<false> | HomepageSelect<true>;
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
     'payload-preferences': PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>;
     'payload-migrations': PayloadMigrationsSelect<false> | PayloadMigrationsSelect<true>;
@@ -159,7 +161,7 @@ export interface SchoolList {
   id: string;
   hero: {
     title: string;
-    description: string;
+    description?: string | null;
     image?: (string | null) | Media;
   };
   highlight?:
@@ -191,6 +193,20 @@ export interface SchoolList {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "homepage".
+ */
+export interface Homepage {
+  id: string;
+  hero: {
+    title: string;
+    description?: string | null;
+    image?: (string | null) | Media;
+  };
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-locked-documents".
  */
 export interface PayloadLockedDocument {
@@ -207,6 +223,10 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'school-list';
         value: string | SchoolList;
+      } | null)
+    | ({
+        relationTo: 'homepage';
+        value: string | Homepage;
       } | null);
   globalSlug?: string | null;
   user: {
@@ -318,6 +338,21 @@ export interface SchoolListSelect<T extends boolean = true> {
               id?: T;
             };
         id?: T;
+      };
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "homepage_select".
+ */
+export interface HomepageSelect<T extends boolean = true> {
+  hero?:
+    | T
+    | {
+        title?: T;
+        description?: T;
+        image?: T;
       };
   updatedAt?: T;
   createdAt?: T;

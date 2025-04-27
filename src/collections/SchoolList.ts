@@ -1,5 +1,5 @@
 import type { CollectionConfig } from "payload";
-import { hero } from "@/fields/Hero";
+import { hero, heroRichtext } from "@/fields/Hero";
 
 export const SchoolList: CollectionConfig = {
   slug: 'school-list',
