@@ -1,7 +1,7 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Footer from '@/components/footer';
-import Navigationbar from '@/components/navbar/navbar-en';
+import Footer from '@/components/Footer';
+import Navigationbar from '@/components/navbar/Navbar-en';
 import { Noto_Sans_JP } from 'next/font/google';
 
 export const metadata = {
