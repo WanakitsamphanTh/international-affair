@@ -1,5 +1,5 @@
 import React from 'react'
-import { fetchData } from '@/app/lib/data'
+import { fetchData } from '@/lib/data'
 import { HeroProps, HomeHero } from '@/components/Hero'
 
 type Props = {

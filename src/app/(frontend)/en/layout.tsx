@@ -3,7 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Footer from '@/components/Footer';
 import Navigationbar from '@/components/navbar/Navbar-en';
 import { Noto_Sans_JP } from 'next/font/google';
-import { baseMetadata, openGraphMetadata, twitterMetadata } from '@/app/lib/baseMetadata';
+import { baseMetadata, openGraphMetadata, twitterMetadata } from '@/lib/baseMetadata';
 
 export const metadata = {
   ...baseMetadata,

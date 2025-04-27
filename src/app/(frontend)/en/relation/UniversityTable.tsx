@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { formatDateEn } from '@/lib/data';
 
 type University = {
   name_jp: string;
@@ -12,16 +13,6 @@ export type Partnership = {
   country_en: string;
   universities: University[];
 };
-
-function formatDateEn(dateString: string): string {
-  const date = new Date(dateString);
-  if (isNaN(date.getTime())) return dateString;
-  return new Intl.DateTimeFormat('en-US', {
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric'
-  }).format(date);
-}
 
 export function UniversityTable({partnerships}:{partnerships:Partnership[]}){
 

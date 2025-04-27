@@ -1,10 +1,10 @@
-import { fetchData } from '@/app/lib/data'
+import { fetchData } from '@/lib/data'
 
 import { HeroProps, Hero } from '@/components/Hero'
 import { HighlightProps, Highlights } from './Highlights'
 import { Partnership, UniversityTable } from './UniversityTable'
 import WorldwideNetwork from './WorldwideNetwork'
-import { ImageInfo } from '@/app/lib/dataType'
+import { ImageInfo } from '@/lib/dataType'
 
 type Props = {
   hero: HeroProps

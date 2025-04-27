@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { ImageInfo } from "@/app/lib/dataType";
+import { ImageInfo } from "@/lib/dataType";
 
 export default function WorldwideNetwork({image}:{image:ImageInfo}){
 

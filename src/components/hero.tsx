@@ -1,11 +1,37 @@
-import { ImageInfo } from "@/app/lib/dataType";
+import { ImageInfo } from "@/lib/dataType";
 import Image from "next/image";
+import { RichText } from "./RichText/Richtext";
 
 export type HeroProps = {
   title: string;
   description: string;
   image?: ImageInfo;
 };
+
+export type PostHeroProps = {
+  title: string;
+  author: string;
+  publishedDate: string;
+}
+
+export function PostHero({title, author, publishedDate}: PostHeroProps) {
+  return (
+    <section className="py-5 bg-light">
+      <div className="container">
+        <div className="row align-items-center">
+          <div className="col-lg-8">
+            <h1 className="display-4 fw-bold mb-3">{title}</h1>
+            <p className="lead mb-4">
+              Author: {author} <br/>
+              Published Date: {publishedDate}
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}
+
 
 export function HomeHero({ title, description, image }: HeroProps) {
   return (
