@@ -1,27 +1,28 @@
 import { Hero } from '@/components/Hero'
+import MessageCard from '@/components/MessageCard';
 import { fetchAllPosts } from '@/lib/data';
-import Link from 'next/link';
 
 async function PostsList(){
   const pages = await fetchAllPosts("en");
 
   return (
-    <div>
-      <ul>
+    <div className="container py-4">
+      <div className="row">
         {pages.map((page) => (
-          <li key={page.id}>
-            <Link href={`/en/message/${page.slug}`}>
-              {page.title}
-            </Link>
-            <p>{page.publishedDate}</p>
-            <p>{page.slug}</p>
-          </li>
+          <div className="col-12 col-md-6 col-lg-4 mb-4" key={page.id}>
+            <MessageCard
+              id={page.id}
+              title={page.title}
+              slug={page.slug}
+              image={page.image}
+              publishedDate={page.publishedDate}
+            />
+          </div>
         ))}
-      </ul>
+      </div>
     </div>
   )
 }
-
 export default async function MessagePage() {
   return (
     <main>

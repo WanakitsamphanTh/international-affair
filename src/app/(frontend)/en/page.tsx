@@ -34,7 +34,7 @@ function Stats() {
 }
 
 export default async function HomePage() {
-  const data = (await fetchData('homepage')) as Props
+  const data = (await fetchData('homepage', "en")) as Props
 
   return (
     <main>

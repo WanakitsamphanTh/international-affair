@@ -12,6 +12,7 @@ import { Media } from '@/collections/Media'
 import { SchoolList } from '@/collections/SchoolList'
 import { Homepage } from '@/collections/Homepage'
 import { Posts } from '@/collections/Posts'
+import { VisaSteps } from '@/collections/VisaSteps'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -23,7 +24,7 @@ export default buildConfig({
       baseDir: path.resolve(dirname),
     },
   },
-  collections: [Users, Media, SchoolList, Homepage, Posts],
+  collections: [Users, Media, SchoolList, Homepage, Posts, VisaSteps],
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || '',
   typescript: {

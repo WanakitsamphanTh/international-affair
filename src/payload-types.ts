@@ -72,6 +72,7 @@ export interface Config {
     'school-list': SchoolList;
     homepage: Homepage;
     posts: Post;
+    'visa-steps': VisaStep;
     'payload-locked-documents': PayloadLockedDocument;
     'payload-preferences': PayloadPreference;
     'payload-migrations': PayloadMigration;
@@ -83,6 +84,7 @@ export interface Config {
     'school-list': SchoolListSelect<false> | SchoolListSelect<true>;
     homepage: HomepageSelect<false> | HomepageSelect<true>;
     posts: PostsSelect<false> | PostsSelect<true>;
+    'visa-steps': VisaStepsSelect<false> | VisaStepsSelect<true>;
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
     'payload-preferences': PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>;
     'payload-migrations': PayloadMigrationsSelect<false> | PayloadMigrationsSelect<true>;
@@ -204,6 +206,7 @@ export interface Homepage {
     description?: string | null;
     image?: (string | null) | Media;
   };
+  tags: 'en' | 'ja';
   updatedAt: string;
   createdAt: string;
 }
@@ -239,6 +242,33 @@ export interface Post {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "visa-steps".
+ */
+export interface VisaStep {
+  id: string;
+  title: string;
+  icon: 'FileCheck' | 'FilePenLine' | 'Building2' | 'Plane' | 'Hospital';
+  content: {
+    root: {
+      type: string;
+      children: {
+        type: string;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  };
+  order: number;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-locked-documents".
  */
 export interface PayloadLockedDocument {
@@ -263,6 +293,10 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'posts';
         value: string | Post;
+      } | null)
+    | ({
+        relationTo: 'visa-steps';
+        value: string | VisaStep;
       } | null);
   globalSlug?: string | null;
   user: {
@@ -390,6 +424,7 @@ export interface HomepageSelect<T extends boolean = true> {
         description?: T;
         image?: T;
       };
+  tags?: T;
   updatedAt?: T;
   createdAt?: T;
 }
@@ -405,6 +440,18 @@ export interface PostsSelect<T extends boolean = true> {
   content?: T;
   image?: T;
   publishedDate?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "visa-steps_select".
+ */
+export interface VisaStepsSelect<T extends boolean = true> {
+  title?: T;
+  icon?: T;
+  content?: T;
+  order?: T;
   updatedAt?: T;
   createdAt?: T;
 }

@@ -1,4 +1,4 @@
-import { FixedToolbarFeature, HTMLConverterFeature, lexicalEditor } from '@payloadcms/richtext-lexical';
+import { FixedToolbarFeature, lexicalEditor } from '@payloadcms/richtext-lexical';
 import { CollectionConfig } from 'payload';
 
 export const Posts: CollectionConfig = {

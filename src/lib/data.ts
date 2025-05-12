@@ -1,10 +1,17 @@
 import { CollectionSlug, getPayload } from "payload";
 import config from "@payload-config";
 
-export async function fetchData(collectionName: CollectionSlug){
-  const payload = await getPayload({config});
+export async function fetchData(collectionName: CollectionSlug, language?: string) {
+  const payload = await getPayload({ config });
+
+  const where: any = {};
+  if (language) {
+    where.tags = { equals: language };
+  }
+
   const response = await payload.find({
     collection: collectionName,
+    where,
   });
 
   return response.docs[0];
